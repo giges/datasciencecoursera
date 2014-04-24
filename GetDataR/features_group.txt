@@ -1,0 +1,8 @@
+Feature Selection 
+=================
+
+The dataset data_group contains grouped data - one line for each combination of activity and subject.
+The aggregated values were computed as mean of all possible values for the given combination of subject and activity.
+
+The features correspond to original features described in features_info.txt
+
