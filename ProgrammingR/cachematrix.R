@@ -1,22 +1,22 @@
 ## These functions allows compute the inverse matrix only ones and cached the result
 ## in the special "matrix" object. 
-## Basic Using: 
-## x<-makeCacheMatrix(matrix(c(2,-1,1,2),2,2))
-## cacheSolve(x)
-## x$get()
-## x$getInverse()
+# Basic Using: 
+# x<-makeCacheMatrix(matrix(c(2,-1,1,2),2,2))
+# cacheSolve(x)
+# x$get()
+# x$getInverse()
 
 ## The function makeCacheMatrix create a special "matrix" object
-## Input: matrix
-## Output: special matrix object which has following function
-##         get, set matrix; 
-##         getInverse, setInverse matrix 
+# Input: matrix
+# Output: special matrix object which has following function
+#         get, set matrix; 
+#         getInverse, setInverse matrix 
 makeCacheMatrix <- function(x = matrix()) {
-  # im - cached inverse matrix
+  # variable im - "cached" inverse matrix
   im <- NULL
-  # local copy of matrix
+  # local copy of a matrix
   x <- x
-  # set - if matrix is changed remove cached inverse matrix
+  # set - if matrix is changed than remove "cached" inverse matrix
   set <- function(y) {
     x <<- y
     im <<- NULL
@@ -31,8 +31,8 @@ makeCacheMatrix <- function(x = matrix()) {
        getInverse = getInverse)
 }
 
-## The function cacheSolve computes the first time inverse matrix, 
-## if it was computed before it returns cached value.
+## The function cacheSolve computes the first time inverse matrix.
+## if the inverse matrix was computed before it returns "cached" inverse matrix.
 
 cacheSolve <- function(x, ...) {
   im <- x$getInverse()
